@@ -46,7 +46,7 @@ $(document).ready(function () {
 
     // Restore senderName from localStorage if present
     const savedSenderName = localStorage.getItem('senderName');
-    if (savedSenderName && ["Salma", "Bandar", "Andita"].includes(savedSenderName)) {
+    if (savedSenderName) {
         $('#senderName').val(savedSenderName).trigger('change');
     }
     // Save senderName to localStorage on change

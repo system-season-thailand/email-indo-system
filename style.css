@@ -21,6 +21,36 @@ body {
     line-height: 1.7;
 }
 
+
+
+
+
+#focus-indicator {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #ff9800;
+    box-shadow: 0 0 12px 4px #ffe0b2;
+    pointer-events: none;
+    z-index: 9999;
+    transition: top 0.4s cubic-bezier(0, 0, 0.4, 1), left 0.4s cubic-bezier(0, 0, 0.4, 1);
+    opacity: 0.95;
+    display: none;
+}
+
+.active-focus,
+.select2-container--default .select2-selection--single.active-focus {
+    border: none !important;
+    box-shadow: none !important;
+    transition: none;
+}
+
+
+
+
+
+
 .app-container {
     display: grid;
     grid-template-columns: 1fr 2fr;
@@ -289,134 +319,5 @@ h2 {
 
     button {
         width: 100%;
-    }
-}
-
-#focus-indicator {
-    position: absolute;
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
-    background: #ff9800;
-    box-shadow: 0 0 12px 4px #ffe0b2;
-    pointer-events: none;
-    z-index: 9999;
-    transition: top 0.4s cubic-bezier(0, 0, 0.4, 1), left 0.4s cubic-bezier(0, 0, 0.4, 1);
-    opacity: 0.95;
-    display: none;
-}
-
-.active-focus,
-.select2-container--default .select2-selection--single.active-focus {
-    border: none !important;
-    box-shadow: none !important;
-    transition: none;
-}
-
-@media (max-width: 600px) {
-    body {
-        padding: 0 4vw;
-        font-size: 0.98rem;
-    }
-
-    .container {
-        padding: 0;
-    }
-
-    .app-container {
-        grid-template-columns: 1fr;
-        gap: 16px;
-    }
-
-    .hotel-list-container,
-    .email-form-container {
-        max-width: 100%;
-        padding: 8px 4vw;
-        margin-bottom: 16px;
-        box-shadow: none;
-    }
-
-    .hotel-list {
-        max-height: 300px;
-        min-height: 120px;
-    }
-
-    .form-row {
-        flex-direction: column;
-        gap: 0;
-    }
-
-    .form-row .form-group {
-        flex: 1 1 100%;
-        margin-bottom: 12px;
-    }
-
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-        font-size: 1rem;
-        padding: 10px;
-    }
-
-    h2 {
-        font-size: 1.15rem;
-        margin-bottom: 12px;
-    }
-
-    button {
-        font-size: 1rem;
-        padding: 12px 0;
-        width: 100%;
-    }
-
-    #focus-indicator {
-        width: 18px;
-        height: 18px;
-        left: 4px !important;
-        top: unset !important;
-        box-shadow: 0 0 8px 2px #ffe0b2;
-    }
-
-    .select2-container--default .select2-selection--single {
-        height: 42px !important;
-        font-size: 1rem;
-    }
-}
-
-@media (max-width: 400px) {
-    body {
-        font-size: 0.92rem;
-        padding: 0 2vw;
-    }
-
-    .hotel-list-container,
-    .email-form-container {
-        padding: 4px 2vw;
-    }
-
-    .form-group label {
-        font-size: 0.98rem;
-    }
-
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-        font-size: 0.95rem;
-        padding: 8px;
-    }
-
-    button {
-        font-size: 0.98rem;
-        padding: 10px 0;
-    }
-
-    h2 {
-        font-size: 1rem;
-    }
-
-    #focus-indicator {
-        width: 14px;
-        height: 14px;
-        left: 2px !important;
     }
 }
