@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Booking Email Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="app-container">
+            <div class="hotel-list-container">
+
+
+                <label for="senderName" style="font-weight: 600;">Reservation Name:</label>
+                <select id="senderName" required>
+                    <option value="Andita">Andita</option>
+                    <option value="Andita">Zahra</option>
+                    <option value="Andita">Caca</option>
+                    <option value="Andita">Sofia</option>
+                    <option value="Salma">Salma</option>
+                    <option value="Bandar">Sarah</option>
+                    <option value="Bandar">Aulia</option>
+                    <option value="Bandar">Ramli</option>
+                    <option value="Bandar">Bandar</option>
+                </select>
+
+
+
+
+                <h2 style="margin-top: 60px;">Select Hotel</h2>
+                <div class="search-box">
+                    <input type="text" id="hotelSearch" placeholder="Search hotels...">
+                </div>
+                <div class="hotel-list" id="hotelList">
+                    <!-- Hotels will be populated by JavaScript -->
+                </div>
+            </div>
+
+            <div class="email-form-container">
+
+                <h2 style="margin-bottom: 40px;">Booking Details:</h2>
+
+                <form id="bookingForm">
+                    <div class="form-row">
+                        <div class="form-group" style="max-width: 450px; margin-bottom: 40px;">
+                            <label for="toEmail">To Email:</label>
+                            <input type="email" id="toEmail" required>
+                        </div>
+                        <div class="form-group" style="max-width: 450px; margin-bottom: 40px;">
+                            <label for="ccEmail">CC Email:</label>
+                            <input type="email" id="ccEmail">
+                        </div>
+                    </div>
+
+
+
+                    <!-- Occasion + Total Rooms + Room Type in one row -->
+                    <div class="form-row">
+                        <div class="form-group" style="max-width: 200px; margin-bottom: 60px;">
+                            <label for="occasion">Occasion:</label>
+                            <select id="occasion" required>
+                                <option value="Honeymooners">Honeymooners</option>
+                                <option value="Family Vacation">Family Vacation</option>
+                                <option value="Vacation">Vacation</option>
+                            </select>
+                        </div>
+                        <div class="form-group" style="max-width: 200px;">
+                            <label for="totalRooms">Total Units:</label>
+                            <select id="totalRooms" required>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                        </div>
+                        <div class="form-group" style="max-width: 200px;">
+                            <label for="roomType">Room Type:</label>
+                            <select id="roomType" required>
+                            </select>
+                        </div>
+                    </div>
+
+
+                    <!-- Check-in + Check-out + Nights Booked in one row -->
+                    <div class="form-row">
+                        <div class="form-group" style="max-width: 200px; margin-bottom: 60px;">
+                            <label for="checkInDate">Check In Date:</label>
+                            <input type="date" id="checkInDate" required>
+                        </div>
+                        <div class="form-group" style="max-width: 200px;">
+                            <label for="checkOutDate">Check Out Date:</label>
+                            <input type="date" id="checkOutDate" required>
+                        </div>
+                        <div class="form-group" style="max-width: 200px;">
+                            <label for="nightsBooked">Total Nights:</label>
+                            <input type="text" id="nightsBooked" readonly style="background-color: #e3e3ff !important;">
+                        </div>
+                    </div>
+
+
+                    <div class="form-row">
+                        <!-- Remaining fields -->
+                        <div class="form-group" style="max-width: 200px;">
+                            <label for="hotelName">Hotel Name:</label>
+                            <input type="text" id="hotelName" readonly>
+                        </div>
+                        <div class="form-group" style="max-width: 500px;">
+                            <label for="guestName">Guest Name:</label>
+                            <input type="text" id="guestName" required placeholder="Mr. First Last">
+                        </div>
+                    </div>
+
+
+
+                    <div class="form-group" style="margin-top: 40px;">
+                        <label for="specialRequests">Special Requests:</label>
+                        <textarea id="specialRequests" rows="4" style="text-align: left;"></textarea>
+                    </div>
+                </form>
+
+
+
+                <div class="form-actions">
+                    <button type="button" id="sendEmail">Send Email</button>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init('bDllvm2tuN6sVWMe7');
+        })();
+    </script>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+
+    <script src="hotel-data.js"></script>
+    <script src="script.js"></script>
+
+    
+    <div id="focus-indicator"></div>
+
+
+
+
+</body>
+
+</html>
